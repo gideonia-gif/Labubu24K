@@ -6,12 +6,15 @@
 
 class FlowersBouquet {
 private:
-    std::vector<std::string> bouquet; 
-    bool is_arranged;                 
+    std::vector<std::string> bouquet;
+    bool is_arranged; 
 
 public:
-    FlowersBouquet(std::vector<std::string> flowers);
-    void arrange();                
+    FlowersBouquet(std::vector<std::string> flowers); 
+    void arrange();
+    
+    std::vector<std::string> getFlowers() const;
+    bool isArranged() const;
 };
 
 #endif
