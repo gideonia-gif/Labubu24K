@@ -3,7 +3,8 @@
 
 #include <string>
 #include <vector>
-#include "FlowersBouquet.h"
+
+class FlowersBouquet;
 
 class Gardener {
 private:
@@ -11,6 +12,7 @@ private:
 
 public:
     Gardener(std::string name);
+    std::string getName() const;
     FlowersBouquet* prepareBouquet(std::vector<std::string> flowers);
 };
 

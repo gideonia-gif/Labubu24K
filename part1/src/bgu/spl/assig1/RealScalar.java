@@ -1,4 +1,5 @@
 package src.bgu.spl.assig1;
+import java.text.DecimalFormat;
 public class RealScalar implements Scalar{
     private double number;
     
@@ -49,9 +50,11 @@ public class RealScalar implements Scalar{
         }        
         return false;
     }
-    public String toString(){
-        return "" + number;
-    }
+    @Override
+    public String toString() {
+    DecimalFormat df = new DecimalFormat("0.######"); 
+    return df.format(this.number);
+}
     public int sign(){
         if(number==0) return 0;
         if(number<0) return -1;
