@@ -23,6 +23,9 @@ public class RationalScalar implements Scalar{
         int newNum = s.getNumber() * this.denominator + this.numerator;
         return new RationalScalar(newNum, this.denominator).reduce();
     }
+     public Scalar addReal(RealScalar s){
+        return new RealScalar(s.getNumber()+((this.getNumerator()*1.0)/this.getDenominator()));
+    }
     public Scalar mul(Scalar s) {
         return s.mulRational(this);
     }
@@ -35,6 +38,10 @@ public class RationalScalar implements Scalar{
     @Override
     public Scalar mulInteger(IntegerScalar s) {
         return new RationalScalar(this.numerator * s.getNumber(), this.denominator).reduce();
+    }
+    @Override
+     public Scalar mulReal(RealScalar s) {
+        return new RealScalar(s.getNumber()*this.getNumerator()/this.getDenominator());
     }
     public Scalar neg(){
         int n = -this.numerator;

@@ -21,8 +21,14 @@ public class IntegerScalar implements Scalar {
         int newNumerator = this.number * s.getDenominator() + s.getNumerator();
         return new RationalScalar(newNumerator, s.getDenominator()).reduce();
     }
+     public Scalar addReal(RealScalar s){
+            return new RealScalar(number+s.getNumber());
+    }
     public Scalar mul(Scalar s) {
         return s.mulInteger(this);
+    }
+    public Scalar mulReal(RealScalar s) {
+        return new RealScalar(number*s.getNumber());
     }
 
     public Scalar mulInteger(IntegerScalar s) {

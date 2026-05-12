@@ -12,4 +12,7 @@ public interface Scalar {
     Scalar addRational(RationalScalar s);
     Scalar mulInteger(IntegerScalar s);
     Scalar mulRational(RationalScalar s);
+    Scalar addReal(RealScalar s);
+    Scalar mulReal(RealScalar s);
+
 }
